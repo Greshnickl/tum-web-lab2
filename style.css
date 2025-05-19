@@ -109,9 +109,15 @@ body {
 }
 
 .services h2 {
-  text-align: center;
+	text-align: center;
   margin-bottom: 50px;
   font-size: 2.5rem;
+}
+
+.services h3 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 1.5rem;
 }
 
 .services-grid {
@@ -136,9 +142,18 @@ body {
   font-size: 3rem;
   margin-bottom: 20px;
   color: var(--primary-color);
+  overflow: hidden;
+}
+.service-card b {
+	font-weight: bold;
+}
+.service-card img {
+	width: 100%;
+	height: auto;
+	object-position: center;
 }
 
-/* About Section */
+
 .about {
   padding: 80px 0;
   background-color: var(--light-color);
@@ -162,7 +177,11 @@ body {
   overflow: hidden;
 }
 
-/* Contact Section */
+
+
+
+
+
 .contact {
   padding: 80px 0;
   background-color: #fff;
@@ -199,7 +218,11 @@ body {
   min-height: 150px;
 }
 
-/* Footer */
+
+
+
+
+
 .footer {
   background-color: var(--dark-color);
   color: var(--text-light);
