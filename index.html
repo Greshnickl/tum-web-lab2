@@ -7,62 +7,129 @@
     <!-- CHANGE THESE VALUES -->
     <link rel="stylesheet" href="reset.css" />
     <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <body>
-    <header class="header">
-      <div class="container">
-        <nav class="navbar">
-          <a href="#" class="logo"><img src="img/logo.png" alt=""></a>
-          <div class="mobile-menu-btn">
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
-          <ul class="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </nav>
-      </div>
-    </header>
+    <header class="bg-blue-900 text-white shadow-md fixed w-full z-50">
+  <div class="container mx-auto px-4">
+    <nav class="flex items-center justify-between py-4">
+      <!-- Логотип -->
+      <a href="#" class="flex items-center space-x-2">
+        <img src="img/logo.png" alt="Medical Center Excellence" class="h-10">
+        <span class="text-xl font-bold hidden md:block">Medical Center Excellence</span>
+      </a>
 
-  <section id="home" class="hero">
-    <div class="container">
-      <div class="hero-content">
-        <h1>Medical Center Exellence</h1>
-        <p>A multifunctional diagnostic, primary and specialized medical care institution</p>
-        <a href="#contact" class="cta-button">Call to Action</a>
+      <!-- Основное меню (скрыто на мобильных) -->
+      <div class="hidden md:flex space-x-8">
+        <a href="#home" class="hover:text-blue-200 transition duration-200 font-medium">Home</a>
+        <a href="#services" class="hover:text-blue-200 transition duration-200 font-medium">Services</a>
+        <a href="#about" class="hover:text-blue-200 transition duration-200 font-medium">About</a>
+        <a href="#contact" class="hover:text-blue-200 transition duration-200 font-medium">Contact</a>
       </div>
+
+      <!-- Кнопка записи (скрыта на мобильных) -->
+      <a href="#contact" class="hidden md:block bg-red-600 hover:bg-red-700 text-white px-6 py-2 rounded-lg transition duration-200 font-medium">
+        Book Appointment
+      </a>
+
+      <!-- Мобильное меню (гамбургер) -->
+      <button id="mobile-menu-button" class="md:hidden focus:outline-none">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </nav>
+
+    <!-- Мобильное меню (раскрывающееся) -->
+    <div id="mobile-menu" class="hidden md:hidden py-4">
+      <a href="#home" class="block py-2 hover:bg-blue-800 px-4 rounded transition duration-200">Home</a>
+      <a href="#services" class="block py-2 hover:bg-blue-800 px-4 rounded transition duration-200">Services</a>
+      <a href="#about" class="block py-2 hover:bg-blue-800 px-4 rounded transition duration-200">About</a>
+      <a href="#contact" class="block py-2 hover:bg-blue-800 px-4 rounded transition duration-200">Contact</a>
+      <a href="#contact" class="block mt-2 bg-red-600 text-white py-2 text-center px-4 rounded-lg transition duration-200">
+        Book Appointment
+      </a>
     </div>
-  </section>
+  </div>
+</header>
+
+  <section id="home" class="hero bg-gradient-to-r from-blue-900 to-blue-700">
+  <div class="container mx-auto px-4">
+    <div class="hero-content text-center py-20">
+      <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">Medical Center Excellence</h1>
+      <p class="text-xl text-blue-100 mb-8">A multifunctional diagnostic, primary and specialized medical care institution</p>
+      <a href="#contact" class="cta-button bg-red-500 hover:bg-red-600 text-white font-bold py-3 px-8 rounded-lg transition duration-300 inline-block">
+        Call to Action
+      </a>
+    </div>
+  </div>
+</section>
+  
 
   <div id="section-cont">
-  <section id="services" class="services">
-    <div class="container">
-      <h2>Our Services</h2>
-      <div class="services-grid">
-        <div class="service-card">
-          <div class="service-icon"><img src="img/CT.jpg" alt=""></div>
-          <h3>Computer tomography</h3>
-          <p><b>Computed tomography (CT)</b> is a non-invasive diagnostic method that combines special x-ray equipment to create detailed images of structures inside the body to obtain diagnostic information.</p>
+
+  <section id="services" class="py-16 bg-gray-50">
+  <div class="container mx-auto px-4">
+    <h2 class="text-3xl font-bold text-center text-gray-800 mb-4">Our Services</h2>
+    <p class="text-lg text-gray-600 text-center max-w-2xl mx-auto mb-12">
+      We provide comprehensive medical services using state-of-the-art equipment and technologies
+    </p>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition duration-300 transform hover:-translate-y-1">
+        <div class="h-48 overflow-hidden">
+          <img src="img/CT.jpg" alt="CT Scan" class="w-full h-full object-cover">
         </div>
-        <div class="service-card">
-          <div class="service-icon"><img src="img/SU.jpg" alt=""></div>
-          <h3>Ultrasound examination</h3>
-          <p><b>Ultrasound examination (US)</b> – or echography – is a modern, effective and non-invasive examination method that has no side effects.</p>
+        <div class="p-6">
+          <h3 class="text-xl font-semibold text-gray-800 mb-2">Computer Tomography</h3>
+          <p class="text-gray-600 mb-4">
+            <span class="font-medium text-blue-600">Computed tomography (CT)</span> is a non-invasive diagnostic method that combines special x-ray equipment to create detailed images of structures inside the body.
+          </p>
+          <a href="#contact" class="inline-block px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition duration-200">
+            Learn More
+          </a>
         </div>
-        <div class="service-card">
-          <div class="service-icon"><img src="img/CARD.jpg" alt=""></div>
-          <h3>Cardiology</h3>
-          <p><b>Cardiology</b> is a medical specialty that deals with the prevention, diagnosis, and treatment of heart disease.
-It includes the diagnosis and treatment of congenital heart defects, coronary heart disease, heart failure, valvulopathy, arrhythmias, and pericardial diseases.</p>
+      </div>
+
+      <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition duration-300 transform hover:-translate-y-1">
+        <div class="h-48 overflow-hidden">
+          <img src="img/SU.jpg" alt="Ultrasound" class="w-full h-full object-cover">
+        </div>
+        <div class="p-6">
+          <h3 class="text-xl font-semibold text-gray-800 mb-2">Ultrasound Examination</h3>
+          <p class="text-gray-600 mb-4">
+            <span class="font-medium text-blue-600">Ultrasound examination (US)</span> – or echography – is a modern, effective and non-invasive examination method that has no side effects.
+          </p>
+          <a href="#contact" class="inline-block px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition duration-200">
+            Learn More
+          </a>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition duration-300 transform hover:-translate-y-1">
+        <div class="h-48 overflow-hidden">
+          <img src="img/CARD.jpg" alt="Cardiology" class="w-full h-full object-cover">
+        </div>
+        <div class="p-6">
+          <h3 class="text-xl font-semibold text-gray-800 mb-2">Cardiology</h3>
+          <p class="text-gray-600 mb-4">
+            <span class="font-medium text-blue-600">Cardiology</span> deals with the prevention, diagnosis, and treatment of heart disease including congenital defects, coronary disease, and heart failure.
+          </p>
+          <a href="#contact" class="inline-block px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition duration-200">
+            Learn More
+          </a>
         </div>
       </div>
     </div>
-  </section>
 
+    <div class="text-center mt-12">
+      <a href="#contact" class="inline-block px-8 py-3 bg-red-600 text-white font-medium rounded-lg hover:bg-red-700 transition duration-200 shadow-md">
+        View All Services
+      </a>
+    </div>
+  </div>
+</section>
+</div>
   <section id="about" class="about">
     <div class="container">
       <div class="about-content">
@@ -77,7 +144,6 @@ It includes the diagnosis and treatment of congenital heart defects, coronary he
       </div>
     </div>
   </section>
-  </div>
 
   <section id="contact" class="contact">
     <div class="container">
