@@ -38,6 +38,7 @@
     </div>
   </section>
 
+  <div id="section-cont">
   <section id="services" class="services">
     <div class="container">
       <h2>Our Services</h2>
@@ -76,6 +77,7 @@ It includes the diagnosis and treatment of congenital heart defects, coronary he
       </div>
     </div>
   </section>
+  </div>
 
   <section id="contact" class="contact">
     <div class="container">
@@ -107,11 +109,36 @@ It includes the diagnosis and treatment of congenital heart defects, coronary he
       </div>
     </div>
   </footer>
+
+  <div id="mascot">
+  <img src="img/mascot.png" alt="Medical Mascot" class="mascot-image">
+  <div class="mascot-message">Welcome to the EXCELLENCE!</div>
+</div>
    <script>
       document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
         document.querySelector('.nav-links').classList.toggle('active');
         this.classList.toggle('active');
       });
+
+
+      setTimeout(function() {
+    document.getElementById('mascot').classList.add('show-mascot');
+  }, 3000);
+  const mascot = document.getElementById('mascot');
+  const messages = [
+    "Book your examination today!",
+    "We have modern equipment",
+  ];
+  
+  let currentMessage = 0;
+  setInterval(() => {
+    mascot.querySelector('.mascot-message').innerHTML = messages[currentMessage];
+    currentMessage = (currentMessage + 1) % messages.length;
+  }, 5000);
+  
+  mascot.addEventListener('click', function() {
+    window.location.href = '#contact';
+  });
     </script>
   </body>
 </html>
